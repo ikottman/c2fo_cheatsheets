@@ -1,0 +1,24 @@
+# run API and main application
+
+npm run c2fo
+
+# start admin application
+
+grunt admin_webapp_dev
+
+# run migrations
+
+c2fo_migrate
+
+# run migrate down to a specific migrations
+
+grunt migrate:1590096823355
+
+# get auth token
+
+early-pay-login
+
+# run tests
+
+grunt test
+grunt test:~/Development/c2fo/facade/test/invoice/invoice.test.js

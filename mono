@@ -1,0 +1,19 @@
+https://honeycomb.jira.com/wiki/spaces/ENG/pages/1083408420/C2FO+Mono+Repo+Documentation
+
+# scoped stuff
+npm i
+npm run build -- --scope @c2fo/my-app
+npm run start -- --scope @c2fo/my-app
+npm run format -- --scope @c2fo/my-app
+npm run migration:run -- --scope @c2fo/my-app
+
+# backing apps
+npm run start:backing-apps
+
+# tests
+npm run affected:test
+npm run test -- --scope @c2fo/entities-division-api
+npm run test -- --scope @c2fo/entities-division-api -- -- -t 'PassthroughClient' --no-coverage
+
+# phoenix
+npm run phoenix:up

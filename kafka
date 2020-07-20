@@ -1,0 +1,17 @@
+# select cluster
+kaf config select-cluster
+
+# get details of topic
+kaf topic describe supplier.projection.early-pay-opportunity.1
+
+# list all topics
+kaf topics
+
+# offset for consumer group
+kaf group describe early-pay-opportunity-01
+
+# follow a topic
+kaf consume -f c2fo-legacy-db.cdc.public.takers_markets.0
+
+# get status of kafka connect connector
+kubectl get --namespace devload kctr early-pay-opportunity-postgres-sink-connector -o json

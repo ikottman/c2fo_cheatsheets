@@ -1,0 +1,19 @@
+DOUBLE CHECK WHAT CONTEXT YOU ARE IN!
+
+# delete release
+helm2 delete early-pay-api --purge
+helm3 delete --namespace devload devload-entities-takers-market-api
+
+# list releases
+helm3 --namespace devload list --pending
+helm3 --namespace devload list
+
+# rollback to a previous release (when something is stuck in PENDING)
+helm2 --kube-context eks-us-west-2-testing history devload --max=10
+helm2 --kube-context eks-us-west-2-testing rollback devload 555
+
+# show released chart
+helm show chart c2fo-harbor/c2fo-mono-api
+
+# show branch chart
+helm show chart c2fo-harbor-develop/c2fo-mono-api --devel
