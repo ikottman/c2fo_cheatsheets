@@ -17,6 +17,9 @@ kubectl exec -n namespace --stdin --tty container_id -- /bin/bash
 ## to first container in a namespace
 kubectl exec -n namespace --stdin --tty ${k get pods -n namespace -o name} -- /bin/bash
 
+# scale down deployment
+kubectl -n namespace scale deploy deployment_name --replicas=0
+
 # deploy a personal pod
 kubectl --namespace manual-commandline run --rm -i --tty manual-testing --image=alpine -- /bin/sh
 
